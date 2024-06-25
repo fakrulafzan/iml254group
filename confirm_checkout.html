@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Confirm Order</title>
+    
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Discover the best hijab tutorials, modest wear fashion tips, and a variety of scarves including bawal and shawl. Shop our collection for a stylish and modest look.">
+        <meta name="keywords" content="modest wear, hijab, hijab tutorial, fashion, scarves, bawal, shawl, modest fashion, wrapping service, hijab video tutorial">
+        <meta name="author" content="Modest Wear">
+        
+    <!--css link-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .carousel-nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+.user-details-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.user-details {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #f5f7fa, #f8a8f8);
+}
+
+.user-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.user-details p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.user-details p strong {
+    color: #333;
+}
+
+.confirm-button {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.confirm-button button {
+    padding: 12px 30px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.confirm-button button:hover {
+    background-color: pink;
+    transform: translateY(-2px);
+}
+
+.confirm-button button:active {
+    background-color: black;
+    transform: translateY(0);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <div class="dropdown">
+                <button>Scarves</button>
+                <div class="dropdown-content">
+                    <a href="bawal.html">The Fantasy Bawal</a>
+                    <a href="shawl.html">The Magis Shawl</a>
+                </div>
+            </div>
+    
+            <button onclick="window.location.href='service.html'">Wrapping Service</button>
+
+            <div class="dropdown">
+                <button>Our Video</button>
+                <div class="dropdown-content">
+                    <a href="tutorial.html">Tutorial</a>
+                    <a href="video.html">MWH Video</a>
+                </div>
+            </div>
+    
+        </div>
+
+    
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/modestwear.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+    
+        <div class="nav-right">
+            <button onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="searchBar" class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchInPage()">Search</button>
+            </div>
+            <div class="dropdown">
+                <button><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Login/Signup</a>
+                    <a href="account.html">My Account</a>
+                    <a href="order.html">My Orders</a>
+                </div>
+            </div>
+            <button onclick="toggleCartPopup()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="cart-popup" class="cart-popup">
+        <h4>Shopping Cart</h4>
+        <ul id="cart-items">
+            <li>No items in cart.</li>
+        </ul>
+        <a href="checkout.html" class="checkout-btn">Checkout</a>
+    </div>    
+    </header>
+    
+<br><br><br>  
+
+<body>
+    <div class="user-details-container">
+        <div class="user-details">
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <span id="name">John Doe</span></p>
+            <p><strong>Address:</strong> <span id="address">123 Main St, Cityville</span></p>
+            <p><strong>Email:</strong> <span id="email">john.doe@example.com</span></p>
+            <p><strong>Phone:</strong> <span id="phone">123-456-7890</span></p>
+        </div>
+        <div class="confirm-button">
+            <button onclick="confirmCheckout()">Confirm Checkout</button>
+        </div>
+    </div>
+
+      <!--Footer Section-->
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="index.html">
+                <img src="images/modestwear2.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+        <div class="footer-links">
+            <h4>INFORMATION</h4>
+            <a href="about.html">About us</a>
+            <a href="group.html">Our Group</a>
+            <h4>Follow Us</h4>
+            <div class="footer-socials">
+                <a href="https://web.facebook.com/profile.php?id=61560695069241&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@modest.wearh" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/modest.wearh/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-support">
+            <h4>HELP & SUPPORT</h4>
+            <a href="policy.html">Return & Refund Policy</a>
+            <a href="faq.html">FAQ</a>
+`            <a href="feedback.html">Feedback</a>
+        </div>
+        <div class="footer-contact">
+            <h4>OUR HQ</h4>
+            <p>L2-B327 Lot 2, Tingkat 2 Bangunan Kedai,<br>
+            Amanjaya Mall, Jalan Badlishah,<br>
+            Bandar Amanjaya, 08000 Sungai Petani, Kedah</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+        function displayCheckoutDetails() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var name = urlParams.get('name');
+            var address = urlParams.get('address');
+            var email = urlParams.get('email');
+            var phone = urlParams.get('phone');
+
+            document.getElementById('name').textContent = name;
+            document.getElementById('address').textContent = address;
+            document.getElementById('email').textContent = email;
+            document.getElementById('phone').textContent = phone;
+
+
+            var serviceItems = getItemsFromServicePage();
+            var serviceList = document.getElementById('checkout-items');
+            serviceItems.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.textContent = `Product Name: ${item.name}, Price: ${item.price}`;
+                serviceList.appendChild(listItem);
+            });
+
+
+            var bawalItems = getItemsFromBawalPage();
+            bawalItems.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.textContent = `Product Name: ${item.name}, Price: ${item.price}`;
+                serviceList.appendChild(listItem);
+            });
+
+
+            var shawlItems = getItemsFromShawlPage();
+            shawlItems.forEach(function(item) {
+                var listItem = document.createElement('li');
+                listItem.textContent = `Product Name: ${item.name}, Price: ${item.price}`;
+                serviceList.appendChild(listItem);
+            });
+        }
+
+        window.onload = function() {
+            displayCheckoutDetails();
+        };
+
+
+        function confirmCheckout() {
+            alert('Your order has been confirmed!');
+            window.location.href = 'index.html'; 
+        }
+        function confirmCheckout() {
+    alert('Checkout confirmed!');
+    // Add more checkout logic here
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Juwita | Fantacy</title>
+    
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Discover the best hijab tutorials, modest wear fashion tips, and a variety of scarves including bawal and shawl. Shop our collection for a stylish and modest look.">
+        <meta name="keywords" content="modest wear, hijab, hijab tutorial, fashion, scarves, bawal, shawl, modest fashion, wrapping service, hijab video tutorial">
+        <meta name="author" content="Modest Wear">
+        
+    <!--css link-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="view2.css">
+    <style>
+        .carousel-nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <div class="dropdown">
+                <button>Scarves</button>
+                <div class="dropdown-content">
+                    <a href="bawal.html">The Fantasy Bawal</a>
+                    <a href="shawl.html">The Magis Shawl</a>
+                </div>
+            </div>
+    
+            <button onclick="window.location.href='service.html'">Wrapping Service</button>
+
+            <div class="dropdown">
+                <button>Our Video</button>
+                <div class="dropdown-content">
+                    <a href="tutorial.html">Tutorial</a>
+                    <a href="video.html">MWH Video</a>
+                </div>
+            </div>
+    
+        </div>
+
+    
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/modestwear.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+    
+        <div class="nav-right">
+            <button onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="searchBar" class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchInPage()">Search</button>
+            </div>
+            <div class="dropdown">
+                <button><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Login/Signup</a>
+                    <a href="account.html">My Account</a>
+                    <a href="order.html">My Orders</a>
+                </div>
+            </div>
+            <button onclick="toggleCartPopup()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="cart-popup" class="cart-popup">
+        <h4>Shopping Cart</h4>
+        <ul id="cart-items">
+            <li>No items in cart.</li>
+        </ul>
+        <div id="cart-total">
+            <strong>Total:</strong> RM0.00
+        </div>
+        <a href="checkout.html" class="checkout-btn">Checkout</a>
+        <a href="cart.html" class="view-edit-btn">View and Edit Cart</a>
+    </div>    
+    
+<br><br><br><br>
+
+<div class="container">
+    <div class="image-section">
+        <img id="main-image" src="images/juwitafantacy1.jpg" alt="Main Product Image">
+        <div class="thumbnail-section">
+            <img id="thumbnail1" src="images/juwitafantacy1.jpg" alt="Juwita-Fantacy1" onclick="changeImage('images/juwitafantacy1.jpg')">
+            <img id="thumbnail1" src="images/juwitafantacy2.jpg" alt="Juwita-Fantacy2" onclick="changeImage('images/juwitafantacy2.jpg')">
+        </div>
+    </div>
+    <div class="details-section">
+        <div class="product-title">Juwita-Fantacy</div>
+        <div class="product-price" id="product-price">RM29.90</div>
+        <div class="payment-info">Quantity</div>
+        <div class="quantity-section">
+            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
+            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+        </div>
+
+        <button onclick="addToCart()" class="buy-button">Add to Cart</button>
+
+        <div class="description-section">
+            <h3>Description</h3>
+            <p>Introducing Juwita, a printed bawal hijab brand that captures the essence of timeless beauty and delicate charm. Crafted from high-quality cotton, Juwita hijabs provide unparalleled comfort and breathability, making them perfect for any occasion. Our designs feature enchanting small floral patterns, bringing a touch of nature’s elegance and a sense of refined grace to your ensemble. Each hijab is thoughtfully created to blend classic style with everyday practicality, ensuring you look effortlessly chic. Elevate your modest fashion with Juwita, where the subtle allure of floral design meets the ultimate in comfort and quality</p>
+            <p>Material: Premium Cotton<br>
+               Size: 46" x 46" approx. (Bawal)<br>
+               Packaging: Garden Pouch Bag</p>
+            <div class="disclaimer-section">
+                *Color slightly different from the actual item due to lighting during photoshoot and screen monitor. Due to the natural condition of the material, scarves may not be 100% perfectly square.
+            </div>
+            <div class="keywords-section">
+                Keywords: Tudung printed, tudung bawal, nostalgic design, printed square, lightweight hijab.
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!--Footer Section-->
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="index.html">
+                <img src="images/modestwear2.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+        <div class="footer-links">
+            <h4>INFORMATION</h4>
+            <a href="about.html">About us</a>
+            <a href="group.html">Our Group</a>
+            <h4>Follow Us</h4>
+            <div class="footer-socials">
+                <a href="https://web.facebook.com/profile.php?id=61560695069241&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@modest.wearh" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/modest.wearh/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-support">
+            <h4>HELP & SUPPORT</h4>
+            <a href="policy.html">Return & Refund Policy</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+        <div class="footer-contact">
+            <h4>OUR HQ</h4>
+            <p>L2-B327 Lot 2, Tingkat 2 Bangunan Kedai,<br>
+            Amanjaya Mall, Jalan Badlishah,<br>
+            Bandar Amanjaya, 08000 Sungai Petani, Kedah</p>
+        </div>
+    </div>
+</footer>
+
+      
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+        let totalAmount = 0;
+        
+        function toggleCartPopup() {
+            const cartPopup = document.getElementById("cart-popup");
+            cartPopup.style.display = cartPopup.style.display === "block" ? "none" : "block";
+        }
+        
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantity--;
+            }
+            quantityInput.value = quantity;
+        }
+        
+        function increaseQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            let quantity = parseInt(quantityInput.value);
+            quantity++;
+            quantityInput.value = quantity;
+        }
+        
+        function addToCart() {
+            const cartCount = document.getElementById("cart-count");
+            let count = parseInt(cartCount.textContent);
+            count++;
+            cartCount.textContent = count;
+        
+            const cartItems = document.getElementById("cart-items");
+            const newItem = document.createElement("li");
+            const quantity = document.getElementById("quantity").value;
+            const priceText = document.getElementById("product-price").textContent;
+            const price = parseFloat(priceText.replace("RM", ""));
+            const itemTotal = price * quantity;
+            totalAmount += itemTotal;
+        
+            newItem.textContent = `Anggun-Fantacy (Quantity: ${quantity}, Price: RM${itemTotal.toFixed(2)})`;
+            cartItems.appendChild(newItem);
+        
+            const emptyMessage = cartItems.querySelector('li');
+            if (emptyMessage && emptyMessage.textContent === 'No items in cart.') {
+                emptyMessage.remove();
+            }
+        
+            document.getElementById("cart-total").innerHTML = `<strong>Total:</strong> RM${totalAmount.toFixed(2)}`;
+        }
+        
+        function changeImage(imageUrl) {
+            var mainImage = document.getElementById('main-image');
+            mainImage.src = imageUrl;
+        }
+        </script>
+</body>
+</html>

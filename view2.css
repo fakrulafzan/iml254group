@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.image-section {
+    flex: 1;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnail-section img {
+    width: 60px;
+    height: auto;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.thumbnail-section img:hover {
+    border: 2px solid #333;
+}
+
+.details-section {
+    flex: 1;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.payment-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.cart-buttons .btn {
+    margin-bottom: 5px;
+}
+
+.quantity-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-btn, .quantity-input {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.quantity-input {
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.btn-black {
+    background-color: #000;
+    color: #fff;
+}
+
+.description-section {
+    margin-top: 10px;
+}
+
+.description-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.description-section p {
+    font-size: 14px;
+    color: #333;
+}
+
+.disclaimer-section {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.keywords-section {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}

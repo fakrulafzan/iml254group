@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Modest Wear. | Online Fashion | Hijab</title>
+    
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Discover the best hijab tutorials, modest wear fashion tips, and a variety of scarves including bawal and shawl. Shop our collection for a stylish and modest look.">
+        <meta name="keywords" content="modest wear, hijab, hijab tutorial, fashion, scarves, bawal, shawl, modest fashion, wrapping service, hijab video tutorial">
+        <meta name="author" content="Modest Wear">
+        
+    <!--css link-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .carousel-nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .new-arrivals {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .new-arrivals h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .new-arrivals p {
+            font-size: 1em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .product-carousel {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+        .product h4 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .product p {
+            color: #888;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #555;
+        }
+
+        .shop-now-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d12568;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .shop-now-btn:hover {
+            background-color: #a11b4f;
+        }
+/* styles.css */
+.promo-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    backdrop-filter: blur(10px);
+}
+
+.promo-modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative; /* Added for positioning close button */
+}
+
+.promo-modal-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.promo-modal-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.promo-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.promo-btn:hover {
+    background-color: #333;
+}
+
+.close {
+    position: absolute;
+    top: -15px; /* Adjust to position properly */
+    right: -15px; /* Adjust to position properly */
+    color: #aaa;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <div class="dropdown">
+                <button>Scarves</button>
+                <div class="dropdown-content">
+                    <a href="bawal.html">The Fantasy Bawal</a>
+                    <a href="shawl.html">The Magis Shawl</a>
+                </div>
+            </div>
+    
+            <button onclick="window.location.href='service.html'">Wrapping Service</button>
+
+            <div class="dropdown">
+                <button>Our Video</button>
+                <div class="dropdown-content">
+                    <a href="tutorial.html">Tutorial</a>
+                    <a href="video.html">MWH Video</a>
+                </div>
+            </div>
+    
+        </div>
+
+    
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/modestwear.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+    
+        <div class="nav-right">
+            <button onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="searchBar" class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchInPage()">Search</button>
+            </div>
+            <div class="dropdown">
+                <button><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Login/Signup</a>
+                    <a href="account.html">My Account</a>
+                    <a href="order.html">My Orders</a>
+                </div>
+            </div>
+            <div>
+                <button onclick="toggleCartPopup()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+            </div>
+        </header>
+    
+        <div id="cart-popup" class="cart-popup">
+            <h4>Shopping Cart</h4>
+            <ul id="cart-items">
+                <li>No items in cart.</li>
+            </ul>
+            <div id="total-price" class="total-price">Total: RM 0.00</div>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+            <a href="cart.html" class="view-edit-btn">View and Edit Cart</a>
+        </div>
+    
+<br><br><br>
+
+<!--Content section-->
+    <div class="content">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/poster4.png" style="width:100%">
+            </div>
+    
+            <div class="slide fade">
+                <img src="images/poster5.png" style="width:100%">
+            </div>
+    
+            <div class="slide fade">
+                <img src="images/poster6.png" style="width:100%">
+            </div>
+
+            <div class="slide fade">
+                <img src="images/poster7.png" style="width:100%">
+            </div>
+    
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+
+        <!--NEW ARRIVAL-->
+        <section class="new-arrivals">
+            <h2>NEW ARRIVALS</h2>
+            <div class="product-carousel">
+                <div class="product" onmouseover="changeImage(this, 'images/puspitafantacy2.jpg')" onmouseout="restoreImage(this, 'images/puspitafantacy1.jpg')">
+                <a href="bawal.html">
+                    <img src="images/puspitafantacy1.jpg" alt="Product 1">
+                </a>
+                    <h4>Puspita - Fantacy</h4>
+                    <p>RM 29.90</p>
+                </div>
+
+                <div class="product" onmouseover="changeImage(this, 'images/magikamagis2.jpg')" onmouseout="restoreImage(this, 'images/magikamagis1.jpg')">
+                <a href="shawl.html">
+                    <img src="images/magikamagis1.jpg" alt="Product 2">
+                </a>
+                    <h4>Magika - Magis</h4>
+                    <p>RM 25.00</p>
+                </div>
+
+                <div class="product" onmouseover="changeImage(this, 'images/anggunfantacy2.jpg')" onmouseout="restoreImage(this, 'images/anggunfantacy1.jpg')">
+                <a href="bawal.html">
+                    <img src="images/anggunfantacy1.jpg" alt="Product 3">
+                </a>
+                    <h4>Anggun - Fantacy</h4>
+                    <p>RM 29.90</p>
+                </div>
+
+                <div class="product" onmouseover="changeImage(this, 'images/dewimagis2.jpg')" onmouseout="restoreImage(this, 'images/dewimagis1.jpg')">
+                <a href="shawl.html">
+                    <img src="images/dewimagis1.jpg" alt="Product 4">
+                </a>
+                    <h4>Dewi - Magis</h4>
+                    <p>RM 25.00</p>
+                </div>
+            </div>
+        </section>
+
+        <h2>OUR COLLECTIONS</h2>
+        <div class="button-container">
+            <a href="bawal.html"></a>
+            <a href="shawl.html"></a>
+        </div>
+
+    <!--Subscribe-->    
+        <section class="subscribe-section" style="background-color: #f5f5f5; padding: 50px 0;">
+            <h2 style="text-align: center;">Subscribe to Our Email</h2>
+            <p style="text-align: center;">Get the latest updates and offers straight to your inbox.</p>
+            <form action="#" method="post" style="text-align: center;">
+                <div class="email-input">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+            </form>
+        </section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <div class="map-content">
+        <div class="map-text">
+            <h1>We're open</h1>
+            <p>Our store is open now! Explore our inspiring space. Come on in and let's start this journey together.</p>
+            <h3>Operating hours:</h3>
+            <p>9.00am - 10pm (sun-mon)</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.269268664747!2d100.50663251066246!3d5.67415773242629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b299fabc9980d%3A0xe1434c98b573b4d7!2sAmanjaya%20Mall%2C%20Sungai%20Petani!5e0!3m2!1sen!2smy!4v1718457397336!5m2!1sen!2smy" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Promotion Sales Popup Modal -->
+<div class="promo-modal" id="promoModal">
+    <div class="promo-modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Special Promotion!</h2>
+        <img src="images/sales.png" alt="Promotion Image">
+        <a href="index.html" class="promo-btn">Claim Offer</a>
+    </div>
+</div>
+
+  <!--Footer Section-->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="index.html">
+                <img src="images/modestwear2.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+        <div class="footer-links">
+            <h4>INFORMATION</h4>
+            <a href="about.html">About us</a>
+            <a href="group.html">Our Group</a>
+            
+            <h4>Follow Us</h4>
+            <div class="footer-socials">
+                <a href="https://web.facebook.com/profile.php?id=61560695069241&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@modest.wearh" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/modest.wearh/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-support">
+            <h4>HELP & SUPPORT</h4>
+            <a href="policy.html">Return & Refund Policy</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+        <div class="footer-contact">
+            <h4>OUR HQ</h4>
+            <p>L2-B327 Lot 2, Tingkat 2 Bangunan Kedai,<br>
+            Amanjaya Mall, Jalan Badlishah,<br>
+            Bandar Amanjaya, 08000 Sungai Petani, Kedah</p>
+        </div>
+    </div>
+</footer>
+
+      
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        
+// Get the modal
+var modal = document.getElementById("promoModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// Get the "Shop Now" button
+var shopNowBtn = document.getElementById("shopNowBtn");
+
+// Open the modal (for demonstration purposes)
+modal.style.display = "block";
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// When the user clicks the "Shop Now" button, close the modal and redirect to the shop page
+shopNowBtn.onclick = function() {
+    modal.style.display = "none"; // Close the modal
+    setTimeout(function() {
+        window.location.href = "index.html"; // Redirect to the shop page after a slight delay
+    }, 300); // Delay to ensure modal closes smoothly
+}
+
+// Mendefinisikan variabel global untuk menyimpan informasi cart
+let cartItems = [];
+
+// Fungsi untuk menambah item ke dalam cart
+function addToCart(productName, price) {
+    // Menambahkan item ke dalam array cartItems
+    cartItems.push({ name: productName, price: price });
+
+    // Memperbarui tampilan cart popup
+    updateCartPopup();
+}
+
+// Fungsi untuk memperbarui tampilan cart popup
+function updateCartPopup() {
+    const cartList = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+    let totalPrice = 0;
+
+    // Mengosongkan daftar item di cart popup
+    cartList.innerHTML = '';
+
+    // Mengisi ul dengan item-item yang ada di cart
+    cartItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - RM ${item.price.toFixed(2)}`;
+        cartList.appendChild(listItem);
+        totalPrice += item.price;
+    });
+
+    // Menampilkan total harga dengan format mata uang
+    totalPriceElement.textContent = `Total: RM ${totalPrice.toFixed(2)}`;
+
+    // Mengupdate jumlah item di cart di ikon bag di header
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cartItems.length;
+}
+
+// Contoh cara menggunakan addToCart dari tombol di dalam produk
+document.querySelectorAll('.product').forEach(product => {
+    product.addEventListener('click', function() {
+        const productName = this.querySelector('h4').textContent.trim();
+        const productPrice = parseFloat(this.querySelector('p').textContent.replace('RM ', ''));
+        addToCart(productName, productPrice);
+    });
+});
+
+
+</script>
+</body>
+</html>

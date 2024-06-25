@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bawal Collection</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Discover the best hijab tutorials, modest wear fashion tips, and a variety of scarves including bawal and shawl. Shop our collection for a stylish and modest look.">
+        <meta name="keywords" content="modest wear, hijab, hijab tutorial, fashion, scarves, bawal, shawl, modest fashion, wrapping service, hijab video tutorial">
+        <meta name="author" content="Modest Wear">
+        
+    <link rel="stylesheet" type="text/css" href="shawl.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <div class="dropdown">
+                <button>Scarves</button>
+                <div class="dropdown-content">
+                    <a href="bawal.html">The Fantasy Bawal</a>
+                    <a href="shawl.html">The Magis Shawl</a>
+                </div>
+            </div>
+    
+            <button onclick="window.location.href='service.html'">Wrapping Service</button>
+
+            <div class="dropdown">
+                <button>Our Video</button>
+                <div class="dropdown-content">
+                    <a href="tutorial.html">Tutorial</a>
+                    <a href="video.html">MWH Video</a>
+                </div>
+            </div>
+    
+        </div>
+
+    
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/modestwear.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+    
+        <div class="nav-right">
+            <button onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="searchBar" class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchInPage()">Search</button>
+            </div>
+            <div class="dropdown">
+                <button><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Login/Signup</a>
+                    <a href="account.html">My Account</a>
+                    <a href="order.html">My Orders</a>
+                </div>
+            </div>
+            <div>
+                <button onclick="toggleCartPopup()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+            </div>
+        </header>
+    
+        <div id="cart-popup" class="cart-popup">
+            <h4>Shopping Cart</h4>
+            <ul id="cart-items">
+                <li>No items in cart.</li>
+            </ul>
+            <div id="total-price" class="total-price">Total: RM 0.00</div>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+            <a href="cart.html" class="view-edit-btn">View and Edit Cart</a>
+        </div>
+    
+    <h1>BAWAL COLLECTION</h1>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-item">
+          <form action="puspita.html" method="get">
+            <div class="product-images">
+                <button type="submit" class="image-button">
+                <img src="images/puspitafantacy1.jpg" alt="Puspita-Fantacy Image 1">
+                <img src="images/puspitafantacy2.jpg" alt="Puspita-Fantacy Image 2">
+              </button>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Puspita-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+                <input type="hidden" name="product" value="Puspita-Fantacy">
+              </form>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="purnama.html">
+                    <img src="images/purnamafantacy1.jpg" alt="Purnama-Fantacy Image 1">
+                    <img src="images/purnamafantacy2.jpg" alt="Purnama-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Purnama-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="juwita.html">
+                    <img src="images/juwitafantacy1.jpg" alt="Juwita-Fantacy Image 1">
+                    <img src="images/juwitafantacy2.jpg" alt="Juwita-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Juwita-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="seroja.html">
+                    <img src="images/serojafantacy1.jpg" alt="Seroja-Fantacy Image 1">
+                    <img src="images/serojafantacy2.jpg" alt="Seroja-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Seroja-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 5 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="citra.html">
+                    <img src="images/citrafantacy1.jpg" alt="Citra-Fantacy Image 1">
+                    <img src="images/citrafantacy2.jpg" alt="Citra-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Citra-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 6 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="anggun.html">
+                    <img src="images/anggunfantacy1.jpg" alt="Anggun-Fantacy Image 1">
+                    <img src="images/anggunfantacy2.jpg" alt="Anggun-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Anggun-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 7 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="raia.html">
+                    <img src="images/raiafantacy1.jpg" alt="Raia-Fantacy Image 1">
+                    <img src="images/raiafantacy2.jpg" alt="Raia-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Raia-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 8 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="teja.html">
+                    <img src="images/tejafantacy1.jpg" alt="Teja-Fantacy Image 1">
+                    <img src="images/tejafantacy2.jpg" alt="Teja-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Teja-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 9 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="mayang.html">
+                    <img src="images/mayangfantacy1.jpg" alt="Mayang-Fantacy Image 1">
+                    <img src="images/mayangfantacy2.jpg" alt="Mayang-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Mayang-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+        <!-- Product 10 -->
+        <div class="product-item">
+            <div class="product-images">
+                <a href="ratna.html">
+                    <img src="images/ratnafantacy1.jpg" alt="Ratna-Fantacy Image 1">
+                    <img src="images/ratnafantacy2.jpg" alt="Ratna-Fantacy Image 2">
+                </a>
+            </div>
+            <div class="product-info">
+                <p class="product-name">Ratna-Fantacy</p>
+                <p class="product-price">RM 29.90</p>
+            </div>
+        </div>
+    </div>
+
+        <!--Subscribe-->    
+        <section class="subscribe-section" style="background-color: #f5f5f5; padding: 50px 0;">
+            <h2 style="text-align: center;">Subscribe to Our Email</h2>
+            <p style="text-align: center;">Get the latest updates and offers straight to your inbox.</p>
+            <form action="#" method="post" style="text-align: center;">
+                <div class="email-input">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+            </form>
+        </section>
+        
+    <footer>
+         <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="images/modestwear2.png" alt="Modest Wear Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <h4>INFORMATION</h4>
+                <a href="about.html">About us</a>
+                <a href="group.html">Our Group</a>
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="https://web.facebook.com/profile.php?id=61560695069241&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@modest.wearh" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/modest.wearh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-support">
+                <h4>HELP & SUPPORT</h4>
+                <a href="policy.html">Return & Refund Policy</a>
+                <a href="faq.html">FAQ</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <div class="footer-contact">
+                <h4>OUR HQ</h4>
+                <p>L2-B327 Lot 2, Tingkat 2 Bangunan Kedai,<br>
+                Amanjaya Mall, Jalan Badlishah,<br>
+                Bandar Amanjaya, 08000 Sungai Petani, Kedah</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Discover the best hijab tutorials, modest wear fashion tips, and a variety of scarves including bawal and shawl. Shop our collection for a stylish and modest look.">
+        <meta name="keywords" content="modest wear, hijab, hijab tutorial, fashion, scarves, bawal, shawl, modest fashion, wrapping service, hijab video tutorial">
+        <meta name="author" content="Modest Wear">
+        
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type=text], input[type=email], input[type=tel], input[type=date] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=tel] {
+            padding-left: 55px;
+        }
+        .save-btn, .edit-btn, .order-btn, .shopping-btn, .logout-btn {
+            background-color: #fff;
+            color: #000;
+            padding: 12px 20px;
+            border: 2px solid #000;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .save-btn:hover, .edit-btn:hover, .order-btn:hover, .shopping-btn:hover, .logout-btn:hover {
+            background-color: #f0f0f0;
+        }
+        .edit-btn {
+            background-color: white;
+            color: black;
+        }
+        .edit-btn:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <div class="dropdown">
+                <button>Scarves</button>
+                <div class="dropdown-content">
+                    <a href="bawal.html">The Fantasy Bawal</a>
+                    <a href="shawl.html">The Magis Shawl</a>
+                </div>
+            </div>
+    
+            <button onclick="window.location.href='service.html'">Wrapping Service</button>
+
+            <div class="dropdown">
+                <button>Our Video</button>
+                <div class="dropdown-content">
+                    <a href="tutorial.html">Tutorial</a>
+                    <a href="video.html">MWH Video</a>
+                </div>
+            </div>
+    
+        </div>
+
+    
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/modestwear.png" alt="Modest Wear Logo">
+            </a>
+        </div>
+    
+        <div class="nav-right">
+            <button onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="searchBar" class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="searchInPage()">Search</button>
+            </div>
+            <div class="dropdown">
+                <button><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <button onclick="logout()">Logout</button>
+                    <a href="account.html">My Account</a>
+                    <a href="order.html">My Orders</a>
+                </div>
+            </div>
+            <button onclick="toggleCartPopup()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+    
+    <div id="cart-popup" class="cart-popup">
+        <h4>Shopping Cart</h4>
+        <ul id="cart-items">
+            <li>No items in cart.</li>
+        </ul>
+        <a href="checkout.html" class="checkout-btn">Checkout</a>
+    </div>
+
+    <br><br><br>
+
+    <div class="content">
+        <h2>WELCOME BACK, MWH MEMBER!</h2>
+        <div id="userInfo" class="user-info">
+            <!-- User information will be displayed here -->
+        </div>
+        <div id="editUserInfo" class="edit-user-info" style="display: none;">
+            <h3>Edit Account Information</h3>
+            <form id="editAccountForm">
+                <div class="form-group">
+                    <label for="editFirstName">First Name</label>
+                    <input type="text" id="editFirstName" name="editFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editLastName">Last Name</label>
+                    <input type="text" id="editLastName" name="editLastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" name="editEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="editAddress">Address</label>
+                    <input type="text" id="editAddress" name="editAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPhoneNumber">Phone Number</label>
+                    <input type="tel" id="editPhoneNumber" name="editPhoneNumber" pattern="\01[0-9]{1}-[0-9]{2}-[0-9]{8}" required>
+                    <small>Format: 012-45678910</small>
+                </div>
+                <div class="form-group">
+                    <label for="editBirthdate">Birthdate</label>
+                    <input type="date" id="editBirthdate" name="editBirthdate" required>
+                </div>
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+        </div>
+        <button id="editInfoBtn" class="edit-btn">Edit Information</button>
+        <a href="order.html" class="order-btn">My Orders</a>
+        <a href="index.html" class="shopping-btn">Shopping</a>
+
+        
+    </div>
+    <br><br>
+
+    <!--Footer Section-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="images/modestwear2.png" alt="Modest Wear Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <h4>INFORMATION</h4>
+                <a href="about.html">About us</a>
+                <a href="group.html">Our Group</a>
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="https://web.facebook.com/profile.php?id=61560695069241&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@modest.wearh" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/modest.wearh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-support">
+                <h4>HELP & SUPPORT</h4>
+                <a href="policy.html">Return & Refund Policy</a>
+                <a href="faq.html">FAQ</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <div class="footer-contact">
+                <h4>OUR HQ</h4>
+                <p>L2-B327 Lot 2, Tingkat 2 Bangunan Kedai,<br>
+                Amanjaya Mall, Jalan Badlishah,<br>
+                Bandar Amanjaya, 08000 Sungai Petani, Kedah</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const email = localStorage.getItem('loggedInUser');
+
+            if (email) {
+                const userData = localStorage.getItem(email);
+
+                if (userData) {
+                    const user = JSON.parse(userData);
+                    displayUserInfo(user);
+                } else {
+                    displayUserInfoNotFound();
+                }
+            } else {
+                // Redirect to login page if no user is logged in
+                window.location.href = 'login.html';
+            }
+
+            // Edit information button click event
+            document.getElementById('editInfoBtn').addEventListener('click', function() {
+                toggleEditForm();
+            });
+
+            // Submit edit form
+            document.getElementById('editAccountForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const editedUser = {
+                    firstName: document.getElementById('editFirstName').value,
+                    lastName: document.getElementById('editLastName').value,
+                    email: document.getElementById('editEmail').value,
+                    address: document.getElementById('editAddress').value,
+                    phoneNumber: document.getElementById('editPhoneNumber').value,
+                    birthdate: document.getElementById('editBirthdate').value
+                };
+
+                // Update user data in localStorage
+                localStorage.setItem(editedUser.email, JSON.stringify(editedUser));
+
+                // Update displayed user info
+                displayUserInfo(editedUser);
+
+                // Update logged in user email if email is changed
+                localStorage.setItem('loggedInUser', editedUser.email);
+
+                // Hide edit form
+                toggleEditForm();
+            });
+
+            // Logout button click event
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                logoutUser();
+            });
+        });
+
+        function displayUserInfo(user) {
+            const userInfoContainer = document.getElementById('userInfo');
+            userInfoContainer.innerHTML = `
+                <p><strong>Name:</strong> ${user.firstName} ${user.lastName}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Address:</strong> ${user.address}</p>
+                <p><strong>Phone Number:</strong> ${user.phoneNumber}</p>
+                <p><strong>Birthdate:</strong> ${user.birthdate}</p>
+            `;
+        }
+
+        function displayUserInfoNotFound() {
+            const userInfoContainer = document.getElementById('userInfo');
+            userInfoContainer.innerHTML = '<p>User information not found.</p>';
+        }
+
+        function toggleEditForm() {
+            const editForm = document.getElementById('editUserInfo');
+            const userInfo = document.getElementById('userInfo');
+            if (editForm.style.display === 'none') {
+                // Show edit form and hide user info
+                editForm.style.display = 'block';
+                userInfo.style.display = 'none';
+
+                // Pre-fill edit form fields with current user info
+                const user = JSON.parse(localStorage.getItem(localStorage.getItem('loggedInUser')));
+                document.getElementById('editFirstName').value = user.firstName;
+                document.getElementById('editLastName').value = user.lastName;
+                document.getElementById('editEmail').value = user.email;
+                document.getElementById('editAddress').value = user.address;
+                document.getElementById('editPhoneNumber').value = user.phoneNumber;
+                document.getElementById('editBirthdate').value = user.birthdate;
+            } else {
+                // Hide edit form and show user info
+                editForm.style.display = 'none';
+                userInfo.style.display = 'block';
+            }
+        }
+
+        function logoutUser() {
+            // Remove logged in user information from localStorage
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
